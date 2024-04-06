@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_23_030805) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_06_154445) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "expertises", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "mentor_id"
+    t.index ["mentor_id"], name: "index_expertises_on_mentor_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.bigint "mentor_id", null: false
+    t.datetime "schedule_at"
+    t.bigint "mentee_id", null: false
+    t.bigint "expertise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expertise_id"], name: "index_meetings_on_expertise_id"
+    t.index ["mentee_id"], name: "index_meetings_on_mentee_id"
+    t.index ["mentor_id"], name: "index_meetings_on_mentor_id"
+  end
 
   create_table "mentees", force: :cascade do |t|
     t.string "name"
@@ -31,4 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_030805) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "meetings", "expertises"
+  add_foreign_key "meetings", "mentees"
+  add_foreign_key "meetings", "mentors"
 end

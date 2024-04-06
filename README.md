@@ -8,7 +8,7 @@ Nesse projeto, queremos viabilizar a conexão entre pessoas que querem:
 - receber mentoria (mentorandas)
 
 ### Requisitos e Premissas
-
+ 
 * Toda pessoa que participa de uma sessão de mentoria, seja a pessoa que oferece conselhos ou a que escuta, precisa contar um pouco de si para que a conversa flua. Então, no nosso caso, precisamos dos dados básicos de uma pessoa, uma URL ( WhatsApp, IN, Calendly, etc) e uma mini bio.
 * Uma pessoa que dá mentoria também pode estar interessada em receber mentorias, então a pessoa pode ter mais de um perfil.
 * As pessoas mentoras podem indicar 1 ou mais especialidades sobre às quais ela pode dar uma mentoria.
