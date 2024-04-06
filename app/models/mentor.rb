@@ -4,4 +4,5 @@ class Mentor < ApplicationRecord
   validates :name, presence: true
 
   has_many :meetings
+  has_many :expertises
 end

@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mentor %>
+<p>Expertises:
+  <%= @mentor.expertises.pluck(:name) %>
+</p>
+
+<div>
+  <%= link_to "Edit this mentor", edit_mentor_path(@mentor) %> |
+  <%= link_to "Back to mentors", mentors_path %>
+  <%= link_to "Create Expertise", new_mentor_expertise_path(@mentor) %> |
+  <%= button_to "Destroy this mentor", @mentor, method: :delete %>
+</div>

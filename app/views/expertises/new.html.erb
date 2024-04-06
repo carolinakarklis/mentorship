@@ -1,0 +1,12 @@
+<h1>Add Expertise</h1>
+
+<%= form_with(model: @expertise, url: mentor_expertises_path) do |f| %>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+   </p>
+   <p>
+    <%= f.submit %>
+   </p>
+<% end %>
+
