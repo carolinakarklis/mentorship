@@ -1,0 +1,9 @@
+<h1>Mentees#index</h1>
+
+<ol>
+  <% @mentees.each do |mentee| %>
+    <li> <%= mentee.name %> </li>
+  <% end %>
+</ol>
+
+<%= link_to "Criar Mentee", new_mentee_path %>
